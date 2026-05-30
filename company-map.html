@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #fefaf5;
+            color: #2c3e2f;
+            line-height: 1.5;
+        }
+
+        :root {
+            --primary-green: #2b5e2b;
+            --secondary-green: #4c8b4c;
+            --light-green: #e9f3e6;
+            --golden: #c9a03d;
+            --brown: #8b5a2b;
+            --light-beige: #fff8ed;
+            --shadow-sm: 0 10px 20px rgba(0,0,0,0.05);
+            --shadow-md: 0 20px 30px -12px rgba(0,0,0,0.1);
+        }
+
+        /* Navbar */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+            padding: 0.8rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn{
+            background:#1B5E20;
+            color:white;
+            text-decoration:none;
+            padding:10px 22px;
+            border-radius:30px;
+            font-weight:700;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo img {
+            height: 50px;
+            width: auto;
+            max-width: 60px;
+            object-fit: contain;
+        }
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-green);
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--golden);
+            display: block;
+            line-height: 1.2;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #2c3e2f;
+            transition: 0.3s;
+            font-size: 1.05rem;
+        }
+        .nav-links a:hover {
+            color: var(--golden);
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 1.7rem;
+            cursor: pointer;
+            color: var(--primary-green);
+        }
+    </style>
+</head>
+<body>
+
+        <nav class="navbar">
+        <div class="logo">
+            <!-- ضع شعارك هنا: مجلد images/logo.png -->
+            <img src="logo.png" alt="شعار روافد" onerror="this.style.display='none'">
+            <div>
+                <h1>روافد</h1>
+                <span>استشارات نخيل وتمور</span>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="home.html">الرئيسية</a></li>
+            <li><a href="vision.html">رؤيتنا ورسالتنا</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="company-map.html">كارت الشركة</a></li>
+            <li><a href="about.html">مشارعنا</a></li>
+        </ul>
+
+        <a href="#" class="nav-btn">طلب استشارة</a>
+    </nav>
+
+    <img src="image.jpg">
+    <br>
+    <img src="image2.jpg">
+</body>
+</html>

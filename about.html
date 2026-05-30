@@ -479,71 +479,93 @@
             <li><a href="about.html">مشارعنا</a></li>
         </ul>
 
-        <a href="contact.html" class="nav-btn">طلب استشارة</a>
+        <a href="vision.html" class="nav-btn">طلب استشارة</a>
     </nav>
 
-    <!-- قسم الهيرو مع خلفيتين متحركتين -->
-    <section id="home" class="hero">
-        <!-- الصورة الأولى -->
-        <div class="hero-slide active" style="background-image: url('hero-bg1.jpg');"></div>
-        <!-- الصورة الثانية -->
-        <div class="hero-slide" style="background-image: url('hero-bg2.jpg');"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>روافد</h1>
-            <p>الخبراء في استشارات وخدمات مزارع النخيل — حلول مبتكرة لإنتاج تمور بجودة عالمية</p>
+
+    <section class="projects" id="projects">
+
+    <div class="section-title">
+        <h2>مشاريعنا المميزة</h2>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <img src="13.png" alt="تطوير مزرعة نخيل">
+            <img src="14.png" alt="تطوير مزرعة نخيل">
+            <img src="15.png" alt="تطوير مزرعة نخيل">
+            <div class="project-content">
+                <h3>تطوير مزرعة نخيل</h3>
+                <ul>
+                    <li>عمل نظام جودة يشمل 30 الف نخله</li>
+                    <li>استصلاح  وزراعة ل 300 فدان نخيل في اربع مناطق</li>
+                    <li>مناطق المشاريع :
+,المنيا 
+,الواحات
+, الفرافره 
+سوهاج</li>
+                    <li>الإشراف على مناشر تجفيف التمور من بداية الحصاد إلى مرحلة الوصول 
+لمحطة التعبئة</li>
+                </ul>
+                <a href="vision.html" class="project-btn">عرض التفاصيل</a>
+            </div>
         </div>
-    </section>
 
-    <section class="stats">
-    <div class="stat-box">
-            <img src="logo.png" alt="نخلة" style="width: 130px; height: 130px; margin: 0 auto 15px;">
+        <div class="project-card">
+            <img src="10.png" alt="استصلاح أرض زراعية">
+            <img src="11.png" alt="استصلاح أرض زراعية">
+            <img src="12.png" alt="استصلاح أرض زراعية">
+            <div class="project-content">
+                <h3>استصلاح أرض زراعية</h3>
+                <ul>
+                    <li>تجهيز التربة</li>
+                    <li>تركيب شبكات الري</li>
+                    <li>زراعة النخيل</li>
+                </ul>
+                <a href="vision.html" class="project-btn">عرض التفاصيل</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="16.png" alt="إدارة وتشغيل المزارع">
+            <img src="17.png" alt="إدارة وتشغيل المزارع">
+            <img src="18.png" alt="إدارة وتشغيل المزارع">
+            <div class="project-content">
+                <h3>إدارة وتشغيل المزارع</h3>
+                <ul>
+                    <li>إدارة تشغيل كاملة</li>
+                    <li>تقارير دورية</li>
+                    <li>رفع الإنتاجية</li>
+                </ul>
+                <a href="vision.html" class="project-btn">عرض التفاصيل</a>
+            </div>
+        </div>
+
     </div>
 
-    <div class="stat-box">
-        <h2>30,000+</h2>
-        <p>نخلة تحت الإدارة</p>
-    </div>
+</section>
 
-    <div class="stat-box">
-        <h2>4+</h2>
-        <p>مشروع مكتمل</p>
-    </div>
 
-    <div class="stat-box">
-        <h2>7</h2>
-        <p>سنة خبرة</p>
-    </div>
-    </section>
+    </footer>
 
-        <a href="tel:01153862422" class="sticky-call" title="اتصل روافد">
+    <a href="tel:01153862422" class="sticky-call" title="اتصل روافد">
         <i class="fas fa-phone"></i> <span>اتصل بنا</span>
+    </a>
+
 
     <script>
-        // تبديل الخلفيات كل 5 ثوانٍ
-        let slides = document.querySelectorAll('.hero-slide');
-        let currentSlide = 0;
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
 
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        if (slides.length > 1) {
-            setInterval(nextSlide, 5000);
-        }
-
-        // قائمة الجوال
-        const mobileBtn = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-links');
-        mobileBtn.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navList.classList.remove('active');
-            });
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
         });
     </script>
+    <p>استشارات وخدمات مزارع النخيل</p>
+    <br>
+    <p>© 2026 جميع الحقوق محفوظة</p>
+</footer>
+
 </body>
 </html>

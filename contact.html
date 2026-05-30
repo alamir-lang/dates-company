@@ -421,6 +421,69 @@
     border-radius:25px;
 }
 
+
+.inquiry{
+    background:white;
+    padding:80px 8%;
+}
+
+.form-container{
+    max-width:800px;
+    margin:auto;
+}
+
+form{
+    display:grid;
+    gap:20px;
+}
+
+input, select, textarea{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:12px;
+    font-size:16px;
+}
+
+textarea{
+    min-height:180px;
+    resize:vertical;
+}
+
+.form-message{
+    margin-top:10px;
+    padding:14px 18px;
+    border-radius:14px;
+    font-weight:600;
+    display:none;
+}
+
+.form-message.success{
+    background:#dff6e6;
+    color:#1b5e20;
+    border:1px solid #7cd18d;
+    display:block;
+}
+
+.form-message.error{
+    background:#fde7e7;
+    color:#8b2525;
+    border:1px solid #f0a3a3;
+    display:block;
+}
+
+.submit-btn{
+    background:#1B5E20;
+    color:white;
+    border:none;
+    padding:16px;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:700;
+}
+
+
         @media (max-width: 800px) {
             .navbar {
                 padding: 1rem;
@@ -479,45 +542,94 @@
             <li><a href="about.html">مشارعنا</a></li>
         </ul>
 
-        <a href="contact.html" class="nav-btn">طلب استشارة</a>
+        <a href="#" class="nav-btn">طلب استشارة</a>
     </nav>
 
-    <!-- قسم الهيرو مع خلفيتين متحركتين -->
-    <section id="home" class="hero">
-        <!-- الصورة الأولى -->
-        <div class="hero-slide active" style="background-image: url('hero-bg1.jpg');"></div>
-        <!-- الصورة الثانية -->
-        <div class="hero-slide" style="background-image: url('hero-bg2.jpg');"></div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>روافد</h1>
-            <p>الخبراء في استشارات وخدمات مزارع النخيل — حلول مبتكرة لإنتاج تمور بجودة عالمية</p>
+        <div id="contact">
+            <div class="section-title">
+                <h2>تواصل مع روافد</h2>
+            </div>
+            <div class="contact-branches">
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h4>اتصل بنا</h4>
+                    <a href="tel:01153862422" class="phone"><i class="fas fa-mobile-alt"></i> 01153862422</a>
+                    <a href="tel:01019300622" class="phone"><i class="fas fa-mobile-alt"></i> 01019300622</a>
+                    <a href="mailto:alalfyemad555@gmail.com" class="email"><i class="fas fa-mobile-alt"></i> alalfyemad555@gmail.com</a>
+                    <div style="margin-top: 12px;">
+                        <a href="https://wa.me/201153862422?text=أهلاً%20روافد،%20أرغب%20في%20استشارة%20لمزرعة%20نخيل" target="_blank" class="map-link" style="background:#25d36620; padding:6px 12px; border-radius:40px;"><i class="fab fa-whatsapp"></i> واتساب</a>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>الفرع الأول</h4>
+                    <p>محافظة النوبارية، مدينة النوبارية</p>
+                    <a href="https://maps.app.goo.gl/VRo1FsvKAKm2DarE9?g_st=aw" target="_blank" class="map-link"><i class="fas fa-location-dot"></i> عرض على الخريطة</a>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h4>الفرع الثاني</h4>
+                    <p>الباويطي، الواحات البحرية</p>
+                    <a href="https://maps.app.goo.gl/AcVfCoNSmiK8fGjS8?g_st=aw" target="_blank" class="map-link"><i class="fas fa-location-dot"></i> عرض على الخريطة</a>
+                </div>
+            </div>
+            <div style="margin-top: 1.8rem; background:#f9f1e4; border-radius: 28px; padding: 1rem; text-align: center;">
+                <p style="font-weight:500;"><i class="fas fa-calendar-alt"></i> نقدم خدماتنا طوال أيام الأسبوع — استشارات ميدانية وخطط زراعية متكاملة</p>
+            </div>
         </div>
-    </section>
-
-    <section class="stats">
-    <div class="stat-box">
-            <img src="logo.png" alt="نخلة" style="width: 130px; height: 130px; margin: 0 auto 15px;">
     </div>
 
-    <div class="stat-box">
-        <h2>30,000+</h2>
-        <p>نخلة تحت الإدارة</p>
+    <section class="inquiry">
+
+    <div class="section-title">
+        <h2>أرسل استفسارك</h2>
     </div>
 
-    <div class="stat-box">
-        <h2>4+</h2>
-        <p>مشروع مكتمل</p>
+    <div class="form-container">
+
+        <form id="contact-form" action="https://formsubmit.co/alalfyemad555@gmail.com" method="POST">
+            <!-- استبدل YOUR_EMAIL@domain.com بالبريد الإلكتروني الحقيقي لاستلام الرسائل -->
+            <input type="hidden" name="_subject" value="استفسار جديد من موقع روافد">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_replyto" value="">
+
+            <input type="text" name="name" placeholder="الاسم الكامل" required>
+
+            <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+
+            <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+
+            <select name="service" required>
+                <option value="">اختر نوع الخدمة</option>
+                <option value="استشارات نخيل">استشارات نخيل</option>
+                <option value="إدارة مزارع">إدارة مزارع</option>
+                <option value="مكافحة آفات">مكافحة آفات</option>
+                <option value="شبكات ري">شبكات ري</option>
+            </select>
+
+            <textarea name="message" placeholder="اكتب استفسارك هنا..." required></textarea>
+
+            <button type="submit" class="submit-btn">
+                إرسال الاستفسار
+            </button>
+
+            <div class="form-message" id="form-message" aria-live="polite"></div>
+
+        </form>
+
     </div>
 
-    <div class="stat-box">
-        <h2>7</h2>
-        <p>سنة خبرة</p>
-    </div>
-    </section>
+</section>
 
-        <a href="tel:01153862422" class="sticky-call" title="اتصل روافد">
+    <footer>
+        <p>© 2025 شركة روافد للاستشارات الزراعية وخدمات مزارع النخيل. جميع الحقوق محفوظة.</p>
+        <p style="margin-top: 0.5rem;">نسعى لريادة مستدامة في عالم التمور</p>
+    </footer>
+
+    <a href="tel:01153862422" class="sticky-call" title="اتصل روافد">
         <i class="fas fa-phone"></i> <span>اتصل بنا</span>
+    </a>
 
     <script>
         // تبديل الخلفيات كل 5 ثوانٍ
@@ -542,6 +654,59 @@
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 navList.classList.remove('active');
+            });
+        });
+
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const name = contactForm.name.value.trim();
+            const phone = contactForm.phone.value.trim();
+            const email = contactForm.email.value.trim();
+            const service = contactForm.service.value;
+            const message = contactForm.message.value.trim();
+
+            if (!name || !phone || !email || !service || !message) {
+                formMessage.textContent = 'يرجى تعبئة جميع الحقول قبل الإرسال.';
+                formMessage.className = 'form-message error';
+                return;
+            }
+
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                formMessage.textContent = 'برجاء إدخال بريد إلكتروني صحيح.';
+                formMessage.className = 'form-message error';
+                return;
+            }
+
+            const formData = new FormData(contactForm);
+            formData.set('_replyto', email);
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    Accept: 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    contactForm.reset();
+                    formMessage.textContent = 'تم إرسال الاستفسار بنجاح! سنتواصل معك قريبًا.';
+                    formMessage.className = 'form-message success';
+                } else {
+                    return response.json().then(data => {
+                        throw new Error(data.message || 'حدث خطأ أثناء إرسال النموذج.');
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Form submission error:', error);
+                formMessage.textContent = 'حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.';
+                formMessage.className = 'form-message error';
             });
         });
     </script>
