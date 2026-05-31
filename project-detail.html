@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>روافد | تفاصيل المشاريع</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #fdf8f1;
+            color: #25321f;
+            line-height: 1.6;
+        }
+        :root {
+            --primary-green: #1f4f1f;
+            --secondary-green: #4c8b4c;
+            --light-green: #edf5ec;
+            --golden: #c69b33;
+            --brown: #7a572e;
+            --shadow-sm: 0 10px 22px rgba(0,0,0,0.08);
+            --shadow-md: 0 18px 32px rgba(0,0,0,0.12);
+        }
+        body, h1, h2, h3, h4, p, ul, li, a {
+            font-family: 'Tajawal', sans-serif;
+        }
+        body {
+            background: radial-gradient(circle at top left, rgba(198,155,51,0.12), transparent 25%), #fbf6ee;
+        }
+        .navbar {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 18px rgba(0,0,0,0.08);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+        .logo h1 {
+            font-size: 1.8rem;
+            color: var(--primary-green);
+            font-weight: 800;
+        }
+        .logo span {
+            color: var(--golden);
+            font-size: 0.9rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #2f3f2e;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.25s ease;
+        }
+        .nav-links a:hover {
+            color: var(--golden);
+        }
+        .nav-btn {
+            background: var(--golden);
+            color: #24301f;
+            padding: 0.75rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            background: #b58b2c;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 1.7rem;
+            color: var(--primary-green);
+            cursor: pointer;
+        }
+        .hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 4rem 1.5rem 3rem;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31,79,31,0.18), rgba(255,255,255,0.2));
+            pointer-events: none;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            color: #1b3f1b;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            color: #3b4a37;
+            margin-bottom: 1.8rem;
+        }
+        .hero a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-green);
+            color: #fff;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            box-shadow: 0 10px 28px rgba(31,79,31,0.18);
+            transition: transform 0.25s ease, background 0.25s ease;
+        }
+        .hero a:hover {
+            transform: translateY(-2px);
+            background: #153a15;
+        }
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #1b3c1b;
+        }
+        .section-title h2 {
+            font-size: 2.6rem;
+        }
+        .detail-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .detail-card {
+            background: white;
+            border-radius: 26px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            border-top: 5px solid var(--golden);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .detail-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+        .detail-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+        .detail-card p {
+            color: #3b4a37;
+            line-height: 1.8;
+        }
+        .detail-card ul {
+            margin-top: 1rem;
+            padding-right: 1rem;
+            list-style: none;
+        }
+        .detail-card ul li {
+            margin-bottom: 0.85rem;
+            position: relative;
+            padding-right: 1.6rem;
+            color: #3e4a39;
+        }
+        .detail-card ul li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 0;
+            color: var(--golden);
+        }
+        .project-detail {
+            padding: 2rem 0 0;
+        }
+        .project-detail-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .project-detail-header h3 {
+            color: var(--brown);
+            font-size: 1.7rem;
+        }
+        .project-detail-header a {
+            color: var(--primary-green);
+            text-decoration: none;
+            font-weight: 700;
+        }
+        .detail-panel {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        .detail-panel .summary {
+            background: #ffffff;
+            border-radius: 26px;
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+        .detail-panel .summary h4 {
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+        .detail-panel .summary p {
+            color: #3a4b39;
+            margin-bottom: 1rem;
+        }
+        .detail-panel .summary .btn-secondary {
+            display: inline-block;
+            margin-top: 1rem;
+            background: var(--golden);
+            color: #24301f;
+            padding: 0.85rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+        }
+        footer {
+            background: rgba(31,55,23,0.95);
+            color: #d3d9c7;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            align-items: start;
+            margin-bottom: 1.2rem;
+        }
+        footer h3,
+        footer h4 {
+            color: #fff;
+            margin-bottom: 0.8rem;
+        }
+        footer a {
+            color: #e4d07f;
+            text-decoration: none;
+        }
+        .sticky-call {
+            position: fixed;
+            bottom: 22px;
+            left: 22px;
+            background: #25d366;
+            color: #fff;
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            border-radius: 50px;
+            padding: 12px 18px;
+            box-shadow: 0 12px 26px rgba(0,0,0,0.18);
+            z-index: 99;
+            text-decoration: none;
+            direction: ltr;
+        }
+        @media (max-width: 900px) {
+            .detail-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+        @media (max-width: 800px) {
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+                background: white;
+                padding: 1rem 0;
+                margin-top: 0.5rem;
+                border-top: 1px solid #eee;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .hero {
+                padding-top: 3rem;
+                min-height: 45vh;
+            }
+            .detail-row,
+            .detail-panel {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="logo.png" alt="شعار روافد" onerror="this.style.display='none'">
+            <div>
+                <h1>روافد</h1>
+                <span>استشارات نخيل وتمور</span>
+            </div>
+        </div>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="index.html">الرئيسية</a></li>
+            <li><a href="vision.html">رؤيتنا ورسالتنا</a></li>
+            <li><a href="contact.html">اتصل بنا</a></li>
+            <li><a href="company-map.html">كارت الشركة</a></li>
+            <li><a href="about.html">مشاريعنا</a></li>
+            <li><a href="apply.html">انضم إلينا</a></li>
+            <li><a href="shop.html">متجر التمور</a></li>
+        </ul>
+        <a href="contact.html" class="nav-btn">طلب استشارة</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>تفاصيل مشاريعنا وخيارات التنفيذ</h1>
+            <p>تعرف على الخدمات والأدوات التي نقدّمها لكل مشروع نخيل، من التحليل إلى التنفيذ والمتابعة.</p>
+            <a href="#project1"><i class="fas fa-info-circle"></i> اطلع على التفاصيل</a>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="section-title">
+            <h2>نظرة عامة على المشاريع</h2>
+        </div>
+
+        <div class="detail-row">
+            <div class="detail-card">
+                <h3>تحكم كامل</h3>
+                <p>نقدّم لك خريطة طريق واضحة تبدأ من الدراسة المبدئية مرورًا بالتخطيط والتنفيذ، وتنتهي بنتائج قابلة للقياس.</p>
+            </div>
+            <div class="detail-card">
+                <h3>استدامة وجودة</h3>
+                <p>نحرص على تصميم حلول تقلّل استهلاك المياه وتزيد من جودة التمور وتحسّن ممارسات التشغيل اليومي.</p>
+            </div>
+            <div class="detail-card">
+                <h3>نتائج موثوقة</h3>
+                <p>من خلال تجربة مشاريع ناجحة، نضع لك خطوات مدروسة لتخفيض المخاطر وزيادة الكفاءة الإنتاجية.</p>
+            </div>
+        </div>
+
+        <div class="project-detail" id="project1">
+            <div class="project-detail-header">
+                <h3>1. تطوير مزرعة نخيل</h3>
+                <a href="contact.html">طلب استشارة الآن</a>
+            </div>
+            <div class="detail-panel">
+                <div class="summary">
+                    <h4>عن المشروع</h4>
+                    <p>مشروع تطوير مزرعة نخيل يركز على جودة الإنتاج والمراقبة الكاملة لمرحلة التجفيف وحتى التعبئة.</p>
+                    <ul>
+                        <li>تنفيذ نظام جودة شامل لــ 30,000 نخلة</li>
+                        <li>استصلاح وزراعة 300 فدان نخيل في مناطق استراتيجية</li>
+                        <li>متابعة الإنتاج من الحصاد وحتى محطة التعبئة</li>
+                    </ul>
+                    <a class="btn-secondary" href="contact.html">احجز موعدًا</a>
+                </div>
+                <div class="summary">
+                    <h4>النتائج المتوقعة</h4>
+                    <p>زيادة حجم الإنتاج، تحسين جودة التمور، وخفض الهدر بفضل إدارة سلسلة الإمداد من المزرعة إلى السوق.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-detail" id="project2">
+            <div class="project-detail-header">
+                <h3>2. استصلاح أرض زراعية</h3>
+                <a href="contact.html">اطلب تقييم الموقع</a>
+            </div>
+            <div class="detail-panel">
+                <div class="summary">
+                    <h4>عن المشروع</h4>
+                    <p>استصلاح الأرض الزراعية يتضمن تجهيز التربة، تركيب شبكات ري حديثة، وتهيئة الأرض لزراعة نخيل عالية الإنتاج.</p>
+                    <ul>
+                        <li>استشارات خاصة بالتربة والمياه</li>
+                        <li>تنفيذ أنظمة ري دقيقة وموفرة</li>
+                        <li>دعم كامل لمرحلة الزراعة والنمو</li>
+                    </ul>
+                    <a class="btn-secondary" href="contact.html">ابدأ الآن</a>
+                </div>
+                <div class="summary">
+                    <h4>المزايا</h4>
+                    <p>ترشيد استهلاك الموارد، زيادة فرص النجاح الزراعي، وتحقيق أعلى مردود لكل فدان مزروع.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-detail" id="project3">
+            <div class="project-detail-header">
+                <h3>3. إدارة وتشغيل المزارع</h3>
+                <a href="contact.html">تواصل معنا</a>
+            </div>
+            <div class="detail-panel">
+                <div class="summary">
+                    <h4>عن المشروع</h4>
+                    <p>خدمة تشغيل وإدارة المزارع تشمل التقارير الدورية وتحسين الأداء للرفع من إنتاجية المزرعة.</p>
+                    <ul>
+                        <li>متابعة يومية ومراقبة ميدانية</li>
+                        <li>تقارير أداء شهرية وتحسين مستمر</li>
+                        <li>فرق فنية متخصصة في الأشجار والثمار</li>
+                    </ul>
+                    <a class="btn-secondary" href="contact.html">احصل على خطة</a>
+                </div>
+                <div class="summary">
+                    <h4>النتائج المتوقعة</h4>
+                    <p>مزارع أكثر تنظيمًا، أقل خسائر، وتحسن واضح في جودة الإنتاج والعائد المالي.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div>
+                <h3>روافد</h3>
+                <p>شريكك في تحويل مزرعة النخيل إلى مشروع متكامل يحقق جودة واستدامة.</p>
+            </div>
+            <div>
+                <h4>تواصل سريع</h4>
+                <p>هاتف: <a href="tel:01153862422">01153862422</a></p>
+                <p>البريد الإلكتروني: <a href="mailto:alalfyemad555@gmail.com">alalfyemad555@gmail.com</a></p>
+            </div>
+        </div>
+        <p>© 2025 جميع الحقوق محفوظة لروافد</p>
+    </footer>
+
+    <a href="tel:01153862422" class="sticky-call" title="اتصل روافد">
+        <i class="fas fa-phone"></i> <span>اتصل بنا</span>
+    </a>
+
+    <script>
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

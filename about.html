@@ -419,6 +419,79 @@
     color:white;
     padding:10px 20px;
     border-radius:25px;
+    transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.project-btn:hover {
+    background: #185014;
+    transform: translateY(-2px);
+}
+
+.project-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.option-card {
+    background: white;
+    border-radius: 24px;
+    padding: 1.8rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--golden);
+}
+
+.option-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.option-card i {
+    font-size: 2rem;
+    color: var(--golden);
+    margin-bottom: 1rem;
+}
+
+.option-card h4 {
+    margin-bottom: 0.75rem;
+    color: #1e3a1e;
+}
+
+.option-card p {
+    color: #3b4b3b;
+    line-height: 1.7;
+}
+
+.footer {
+    background: #1f2a1e;
+    color: #d9e2cd;
+    padding: 2rem 1.5rem;
+    text-align: center;
+}
+
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+    margin-bottom: 1rem;
+}
+
+.footer h3,
+.footer h4 {
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+
+.footer a {
+    color: #c9a03d;
+    text-decoration: none;
+}
+
+.footer p {
+    color: #cfd8c5;
 }
 
         @media (max-width: 800px) {
@@ -472,11 +545,13 @@
             <i class="fas fa-bars"></i>
         </div>
         <ul class="nav-links" id="nav-links">
-            <li><a href="home.html">الرئيسية</a></li>
+            <li><a href="index.html">الرئيسية</a></li>
             <li><a href="vision.html">رؤيتنا ورسالتنا</a></li>
             <li><a href="contact.html">اتصل بنا</a></li>
             <li><a href="company-map.html">كارت الشركة</a></li>
-            <li><a href="about.html">مشارعنا</a></li>
+            <li><a href="about.html">مشاريعنا</a></li>
+            <li><a href="apply.html">انضم إلينا</a></li>
+            <li><a href="shop.html">متجر التمور</a></li>
         </ul>
 
         <a href="vision.html" class="nav-btn">طلب استشارة</a>
@@ -487,6 +562,24 @@
 
     <div class="section-title">
         <h2>مشاريعنا المميزة</h2>
+    </div>
+
+    <div class="project-options">
+        <div class="option-card">
+            <i class="fas fa-chart-line"></i>
+            <h4>تحليل الجدوى</h4>
+            <p>خطة شاملة لمشروعك تحدد التكلفة والعائد وتضمن استثمار آمن.</p>
+        </div>
+        <div class="option-card">
+            <i class="fas fa-seedling"></i>
+            <h4>برامج زراعية متقدمة</h4>
+            <p>تصميم برامج ري وتسميد ذكية ترفع الإنتاجية وتثبّت الجودة.</p>
+        </div>
+        <div class="option-card">
+            <i class="fas fa-hands-helping"></i>
+            <h4>متابعة يومية</h4>
+            <p>دعم فني دائم داخل المزرعة لضبط التنفيذ وتحسين النتائج بشكل مستمر.</p>
+        </div>
     </div>
 
     <div class="project-grid">
@@ -508,7 +601,7 @@
                     <li>الإشراف على مناشر تجفيف التمور من بداية الحصاد إلى مرحلة الوصول 
 لمحطة التعبئة</li>
                 </ul>
-                <a href="vision.html" class="project-btn">عرض التفاصيل</a>
+                <a href="project-detail.html#project1" class="project-btn">عرض التفاصيل</a>
             </div>
         </div>
 
@@ -523,7 +616,7 @@
                     <li>تركيب شبكات الري</li>
                     <li>زراعة النخيل</li>
                 </ul>
-                <a href="vision.html" class="project-btn">عرض التفاصيل</a>
+                <a href="project-detail.html#project2" class="project-btn">عرض التفاصيل</a>
             </div>
         </div>
 
@@ -538,7 +631,7 @@
                     <li>تقارير دورية</li>
                     <li>رفع الإنتاجية</li>
                 </ul>
-                <a href="vision.html" class="project-btn">عرض التفاصيل</a>
+                <a href="project-detail.html#project3" class="project-btn">عرض التفاصيل</a>
             </div>
         </div>
 
@@ -546,13 +639,24 @@
 
 </section>
 
-
+    <footer class="footer">
+        <div class="container">
+            <div class="info-section">
+                <h3>روافد</h3>
+                <p>نحن نساعد مزارع النخيل على النمو من خلال خطط تنفيذية وحلول استشارية متكاملة.</p>
+            </div>
+            <div class="info-section">
+                <h4>تواصل معنا</h4>
+                <p>هاتف: <a href="tel:01153862422">01153862422</a></p>
+                <p>البريد الإلكتروني: <a href="mailto:alalfyemad555@gmail.com">alalfyemad555@gmail.com</a></p>
+            </div>
+        </div>
+        <p>© 2025 جميع الحقوق محفوظة لروافد</p>
     </footer>
 
     <a href="tel:01153862422" class="sticky-call" title="اتصل روافد">
         <i class="fas fa-phone"></i> <span>اتصل بنا</span>
     </a>
-
 
     <script>
         const menuToggle = document.getElementById('mobile-menu');
@@ -562,10 +666,5 @@
             navLinks.classList.toggle('active');
         });
     </script>
-    <p>استشارات وخدمات مزارع النخيل</p>
-    <br>
-    <p>© 2026 جميع الحقوق محفوظة</p>
-</footer>
-
 </body>
 </html>
